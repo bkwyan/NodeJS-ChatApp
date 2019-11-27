@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
 
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id)
-        io.to(user.room).emit('message', generatedMessage(user.username, message))
+        io.to(user.room).emit('message', generateMessage(user.username, message))
         callback()
     });
 
